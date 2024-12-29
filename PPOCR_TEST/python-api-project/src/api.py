@@ -23,14 +23,14 @@ async def upload_image(file: UploadFile = File(...)):
             f.write(await file.read())
 
         # Process the image using the existing OCR functionality
-        detected_text = process_image(file_location)
+        result = process_image(file_location)
 
         # Clean up the saved file
         os.remove(file_location)
 
-        logger.info(f"Detected text: {detected_text}")
+        logger.info(f"Detected text: {result['detected_text']}")
 
-        return JSONResponse(content={"detected_text": detected_text})
+        return JSONResponse(content=result)
 
     except Exception as e:
         logger.error(f"Error: {str(e)}")
