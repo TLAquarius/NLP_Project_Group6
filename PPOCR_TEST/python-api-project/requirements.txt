@@ -1,0 +1,8 @@
+Flask
+Pillow
+paddleocr
+matplotlib
+numpy
+uvicorn
+fastapi
+python-multipart
