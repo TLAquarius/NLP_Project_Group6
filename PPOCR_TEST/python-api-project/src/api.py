@@ -14,6 +14,7 @@ logger = logging.getLogger(__name__)
 async def upload_image(file: UploadFile = File(...)):
     try:
         # Ensure the temp directory exists
+        print("Hello, world!")
         temp_dir = "../temp"
         os.makedirs(temp_dir, exist_ok=True)
 
@@ -35,3 +36,4 @@ async def upload_image(file: UploadFile = File(...)):
     except Exception as e:
         logger.error(f"Error: {str(e)}")
         return JSONResponse(content={"error": str(e)}, status_code=500)
+
