@@ -57,7 +57,7 @@ def process_image(image):
     font_path = './/NomNaTong-Regular.ttf'
 
     # Draw bounding box and text on the image
-    result_image = draw_ocr(image, boxes, texts, scores, font_path=font_path)
+    result_image = draw_ocr(image, boxes, texts, scores, font_path=font_path,draw_text=False)
 
     # Convert the result image to Base64
     buffered = BytesIO()
