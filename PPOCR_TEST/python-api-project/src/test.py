@@ -56,8 +56,11 @@ def process_image(image):
     # Path to the font file
     font_path = './/NomNaTong-Regular.ttf'
 
-    # Draw bounding box and text on the image
-    result_image = draw_ocr(image, boxes, texts, scores, font_path=font_path,draw_text=False)
+    if len(result[0]) > 0:  
+        result_image = draw_ocr(image, boxes, texts, scores, font_path=font_path)
+    else:
+        print("No text detected.")
+        result_image = image  
 
     # Convert the result image to Base64
     buffered = BytesIO()
