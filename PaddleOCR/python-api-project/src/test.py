@@ -46,7 +46,14 @@ def process_image(image):
     texts = [texts[i] for i in sorted_indices]
     scores = [scores[i] for i in sorted_indices]
 
+<<<<<<< HEAD:PaddleOCR/python-api-project/src/test.py
     # Draw bounding boxes on the image
+=======
+    # Path to the font file
+    font_path = './/NomNaTong-Regular.ttf'
+
+
+>>>>>>> master:PPOCR_TEST/python-api-project/src/test.py
     draw = ImageDraw.Draw(image)
     for box in boxes:
         draw.polygon([tuple(point) for point in box], outline='red')

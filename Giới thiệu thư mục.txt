@@ -1,0 +1,15 @@
+- Root : Thư mục chính 
+    - Additional_Midterm_Data : Thư mục chứa bộ dữ liệu bổ sung GK 
+        - Khanh_ Additional_Midterm_Data : Thư mục chứa bộ dữ liệu bổ sung GK của Khánh - 22127190
+        - Thanh_ Additional_Midterm_Data : Thư mục chứa bộ dữ liệu bổ sung GK của Thạnh - 22127392
+    - Mobile : Thư mục chứa ứng dụng mobile 
+        - PaddleOCRApp_usingReactNative/PaddleOCRApp : Thư mục chứa code ứng dụng mobile được code bằng React Native. 
+        - PaddlePadlleLiteApp :  Thư mục chứa ứng dụng mobile sử dụng PaddleLite tìm hiểu thêm được. 
+    - PaddleOCR : Thư mục chứa model và API để sử dụng model 
+        - Det : Thư mục chứa model Detection. 
+        - Python-api-project/src : Thư mục chứa code API để sử dụng model 
+        -  rec : Thư mục chứa model Recognition. 
+    - TrainingModel : Thư mục chứa code quá trình fine tunning của nhóm trên  2 mô hình : Detection và Recognition. 
+    - prebuilt_android_demo_from_PaddleOCR_git: thư mục chứa các file liên quan đến app PaddleOCR được xây dựng sẵn cho android trên trang git chính thức. 
+    - android_demo: thư mục project chứa code để build và deploy app. 
+    - video_demo :  Thư mục chứa 2 video demo về app xây dựng bằng React Native và PaddleLite(có sẵn). 
