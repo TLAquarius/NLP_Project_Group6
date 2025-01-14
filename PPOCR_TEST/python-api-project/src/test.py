@@ -9,7 +9,7 @@ import base64
 # Initialize PaddleOCR
 ocr = PaddleOCR(
     # Initialize PaddleOCR
-    det_model_dir='..//..//det//final_det_inference',  # Model detection
+    det_model_dir='..//..//det//ch_PP-OCRv3_det_infer',  # Model detection
     rec_model_dir='..//../rec//ch_PP-OCRv3_rec_infer',  # Model recognition
     use_gpu=False  # Set to True if using GPU
 )
@@ -61,3 +61,19 @@ def process_image(image):
         'detected_text': [{'text': text, 'confidence': score} for text, score in zip(texts[::-1], scores[::-1])],
         'image': result_image_base64  # Image returned as Base64
     }
+
+def export_result(image):
+     # Perform OCR on the image
+    result = ocr.ocr(np.array(image), det=True, rec=True)
+
+    # Extract coordinates, text, and confidence scores
+    boxes = [line[0] for line in result[0]]
+    texts = [line[1][0] for line in result[0]]
+    scores = [line[1][1] for line in result[0]]
+
+    # Format the result as required
+    formatted_result = []
+    for box, text in zip(boxes, texts):
+        points = [[int(point[0]), int(point[1])] for point in box]
+        formatted_result.append({"transcription": text, "points": points})
+    return formatted_result
